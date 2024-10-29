@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES, IM YOUR FLOWER UWU</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            /* Centrar horizontalmente */
+            align-items: center;
+            /* Centrar verticalmente */
+        }
+
+        .centered {
+            text-align: center;
+            /* Alinear texto al centro */
+            margin-top: 160px ;
+            
+            display: flex;
+            justify-content: center;
+            
+            flex-direction: column;
+            font-family: "Italianno", cursive;
+        }
+        h2{display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #castle {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(#293c4d, #001920);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: starFall linear infinite;
+        }
+
+        @keyframes starFall {
+            0% {
+                transform: translateY(-100%);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="castle">
+        <h1 class="centered" style="color: rgb(255, 255, 255); font-size: 24px; font-weight: bold; font-family: Italianno;">¡¡¡Happy Birthday Dear sky!!!!</h1>
+
+        <h2  style="color: rgb(255, 255, 255); font-size: 16px; font-weight: bold;">Like always i wish you Happy...</h2>
+        <div id="table"></div>
+        <div class="shade-wrap hover-animation" id="main">
+            <div id="flower-wrap">
+                <div id="stem"></div>
+                <div id="petal1"></div>
+                <div id="peta1"></div>
+                <div id="peta2"></div>
+                <div id="petal2"></div>
+                <div id="petal3"></div>
+                <div id="petal4"></div>
+                <div id="peta4"></div>
+                <div id="petal5"></div>
+                <div id="peta5"></div>
+                <div id="falling-petal"></div>
+                <div id="leaf1"></div>
+                <div id="leaf2"></div>
+            </div>
+        </div>
+        <div class="shade-wrap" id="sub">
+            <div id="shade-main-reflections"></div>
+            <div id="shade-main">
+                <div id="shade-handle-big"></div>
+                <div id="shade-handle-small"></div>
+                <div id="top-reflection"></div>
+                <div id="bottom-shade"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function createStars() {
+            const numStars = 1000; // Puedes ajustar este número según la cantidad deseada de estrellas
+            const castle = document.getElementById('castle');
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * window.innerWidth + 'px';
+                star.style.top = Math.random() * -200 + 'px'; // Empiezan desde arriba de la pantalla
+                star.style.animationDuration = Math.random() * 8 + 8 + 's'; // Ajusta la velocidad de la caída
+                castle.appendChild(star);
+            }
+        }
+
+        createStars(); // Llamar a la función para crear estrellas al cargar la página
+    </script>
+
+</body>
+
+</html>
